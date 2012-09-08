@@ -215,6 +215,8 @@ on post-fs
     chmod 0664 /sys/kernel/mm/ksm/pages_to_scan
     chown root system /sys/module/lowmemorykiller/parameters/minfree
     chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
+    chown root system /sys/module/lowmemorykiller/parameters/adj
+    chmod 0664 /sys/module/lowmemorykiller/parameters/adj
 
 on boot
 # basic network init
