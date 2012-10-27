@@ -424,10 +424,6 @@ static void import_kernel_nv(char *name, int in_qemu)
             strlcpy(bootmode, value, sizeof(bootmode));
         } else if (!strcmp(name,"androidboot.serialno")) {
             strlcpy(serialno, value, sizeof(serialno));
-#ifdef USE_MOTOROLA_CODE
-        } else if (!strcmp(name,"androidboot.usbmode")) {
-            strlcpy(usbmode, value, sizeof(usbmode));
-#endif
         } else if (!strcmp(name,"androidboot.baseband")) {
             strlcpy(baseband, value, sizeof(baseband));
         } else if (!strcmp(name,"androidboot.carrier")) {
@@ -437,6 +433,8 @@ static void import_kernel_nv(char *name, int in_qemu)
         } else if (!strcmp(name,"androidboot.hardware")) {
             strlcpy(hardware, value, sizeof(hardware));
 #ifdef USE_MOTOROLA_CODE
+        } else if (!strcmp(name,"androidboot.usbmode")) {
+            strlcpy(usbmode, value, sizeof(usbmode));
         } else if (!strcmp(name, "mem")) {
             strlcpy(memsize, value, sizeof(memsize));
 #endif

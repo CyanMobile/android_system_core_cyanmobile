@@ -65,23 +65,32 @@ struct {
     { "net.qmi0",         AID_RADIO,    0 },
     { "net.qmi1",         AID_RADIO,    0 },
     { "net.qmi2",         AID_RADIO,    0 },
-#endif
-    { "net.rmnet",        AID_RADIO,    0 },
-#ifdef USE_MOTOROLA_USERS
     { "net.rmnet0.",      AID_RADIO,    0 },
     { "net.gannet0.",     AID_RADIO,    0 },
+	{ "net.dns",          AID_DHCP,     0 },
+    { "serialno",         AID_RADIO,    0 },
+    { "radio.",           AID_RADIO,    0 },
+    // Motorola, w18335, 12-May-2011 IKTCMD-212
+    { "tcmd.",            AID_MOT_TCMD, AID_MOT_WHISPER },
+    { "persist.mot_proximity.", AID_RADIO, 0 },
+    { "mot.backup_restore.",AID_MOT_TCMD, 0 },
+    { "mot.",             AID_MOT_TCMD, 0 },
+/* BEGIN Motorola, cjg040 */
+    { "sys.",             AID_MOT_OSH,  0 },
+    { "hw.",              AID_MOT_OSH,  0 },
+/* END Motorola */
+    // Motorola, a22976, 20-Oct-2010, IKSTABLETWOV-3218
+    { "cdma.nbpcd.supported", AID_RADIO, AID_RADIO },
+    // Motorola, vrwd38, IKSTABLEFOURV-3408
+    { "hw.",              AID_MOT_WHISPER, 0 },
 #endif
+    { "net.rmnet",        AID_RADIO,    0 },
     { "net.gprs.",        AID_RADIO,    0 },
     { "net.ppp",          AID_RADIO,    0 },
     { "ril.",             AID_RADIO,    0 },
     { "gsm.",             AID_RADIO,    0 },
     { "persist.radio",    AID_RADIO,    0 },
     { "net.dns",          AID_RADIO,    0 },
-#ifdef USE_MOTOROLA_USERS
-    { "net.dns",          AID_DHCP,     0 },
-    { "serialno",         AID_RADIO,    0 },
-    { "radio.",           AID_RADIO,    0 },
-#endif
     { "net.gannet",       AID_RADIO,    0 },
     { "net.",             AID_SYSTEM,   0 },
     { "dev.",             AID_SYSTEM,   0 },
@@ -102,21 +111,6 @@ struct {
     { "persist.service.", AID_SYSTEM,   0 },
     { "persist.service.", AID_RADIO,    0 },
     { "persist.security.",AID_SYSTEM,   0 },
-#ifdef USE_MOTOROLA_USERS
-    // Motorola, w18335, 12-May-2011 IKTCMD-212
-    { "tcmd.",            AID_MOT_TCMD, AID_MOT_WHISPER },
-    { "persist.mot_proximity.", AID_RADIO, 0 },
-    { "mot.backup_restore.",AID_MOT_TCMD, 0 },
-    { "mot.",             AID_MOT_TCMD, 0 },
-/* BEGIN Motorola, cjg040 */
-    { "sys.",             AID_MOT_OSH,  0 },
-    { "hw.",              AID_MOT_OSH,  0 },
-/* END Motorola */
-    // Motorola, a22976, 20-Oct-2010, IKSTABLETWOV-3218
-    { "cdma.nbpcd.supported", AID_RADIO, AID_RADIO },
-    // Motorola, vrwd38, IKSTABLEFOURV-3408
-    { "hw.",              AID_MOT_WHISPER, 0 },
-#endif
     { "wimax.",           AID_SYSTEM,   1000 },
     { "net.pdp0",         AID_RADIO,    0 },
     { "net.pdp1",         AID_RADIO,    AID_RADIO },
